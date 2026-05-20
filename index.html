@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumina Studio - Hand-Poured Candle Making</title>
+  <link rel="icon" type="image/jpeg" href="images/candle_logo.jpg">
+  <meta name="description" content="Experience the art of hand-poured candle making. Join our interactive workshops and blend custom scents.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'accent': '#D98A6C', /* Soft Terracotta / Rose Gold */
+            'brand-dark': '#3A3532', /* Warm Espresso */
+            'brand-light': '#FDFBF7', /* Ivory Cream */
+            'brand-muted': '#968E88' /* Warm Taupe */
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    [dir="rtl"] { direction: rtl; }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeInUp 0.8s ease-out; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+  </style>
+</head>
+<body class="font-sans antialiased transition-colors duration-300 bg-brand-light dark:bg-brand-dark flex flex-col min-h-screen">
+
+  <nav class="bg-brand-light dark:bg-brand-dark fixed w-full top-0 z-50 border-b border-gray-200 dark:border-white/10 transition-colors duration-300">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-[90px]">
+
+        <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="flex flex-col">
+              <span class="text-2xl font-semibold tracking-tight text-brand-dark dark:text-brand-light uppercase whitespace-nowrap">Lumina<span class="text-accent">Studio.</span></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="hidden xl:flex items-center justify-center flex-1 mx-8">
+          <div class="flex items-center gap-6 lg:gap-8">
+
+            <div class="relative group h-[90px] flex items-center">
+              <button class="text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors flex items-center relative py-2 whitespace-nowrap">
+                <span>Home</span>
+                <i class="fas fa-chevron-down text-[10px] ms-2 transition-transform duration-300 group-hover:rotate-180"></i>
+                <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+              </button>
+              
+              <div class="absolute top-[90px] start-0 w-56 bg-brand-light dark:bg-[#322D2A] border border-t-0 border-gray-200 dark:border-white/10 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                <div class="py-4 px-6 flex flex-col gap-4">
+                  <a href="index.html" class="text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">HOME PAGE 01</a>
+                  <a href="home-2.html" class="text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">HOME PAGE 02</a>
+                </div>
+              </div>
+            </div>
+
+            <a href="about.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors py-2 whitespace-nowrap">
+              About
+              <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="services.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors py-2 whitespace-nowrap">
+              Services
+              <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="shop.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors py-2 whitespace-nowrap">
+              Products Shop
+              <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="blog.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors py-2 whitespace-nowrap">
+              Blog
+              <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="contact.html" class="relative group text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors py-2 whitespace-nowrap">
+              Contact
+              <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+            </a>
+
+            <div class="relative group h-[90px] flex items-center">
+              <button class="text-xs uppercase tracking-[0.15em] font-medium text-gray-900 dark:text-gray-100 hover:text-accent transition-colors flex items-center relative py-2 whitespace-nowrap">
+                <span>Dashboard</span>
+                <i class="fas fa-chevron-down text-[10px] ms-2 transition-transform duration-300 group-hover:rotate-180"></i>
+                <span class="absolute bottom-0 start-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+              </button>
+              
+              <div class="absolute top-[90px] end-0 w-64 bg-brand-light dark:bg-[#322D2A] border border-t-0 border-gray-200 dark:border-white/10 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                <div class="py-4 px-6 flex flex-col gap-5">
+                  <a href="admin-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors whitespace-nowrap">
+                    <i class="fas fa-user-shield w-6 me-2"></i> Admin Dashboard
+                  </a>
+                  <a href="client-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors whitespace-nowrap">
+                    <i class="fas fa-user w-6 me-2"></i> Client Dashboard
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="hidden xl:flex items-center gap-4">
+          
+          <button type="button" onclick="window.location.href='login.html'" class="bg-accent border-2 border-accent text-white hover:bg-transparent hover:text-accent px-6 py-2.5 text-xs uppercase tracking-wider font-semibold transition-all duration-300 flex items-center gap-2 whitespace-nowrap">
+            <span>Login</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </button>
+          
+          <a href="register.html" class="bg-transparent border-2 border-gray-300 dark:border-gray-700 text-brand-dark dark:text-brand-light hover:border-accent dark:hover:border-accent hover:text-accent dark:hover:text-accent px-6 py-2.5 text-xs uppercase tracking-wider font-medium transition-all duration-300 flex items-center gap-2 whitespace-nowrap">
+            <span>Register</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </a>
+
+          <div class="h-8 w-px bg-gray-200 dark:bg-gray-700 mx-2"></div>
+
+          <button id="theme-toggle" class="relative w-[72px] h-[34px] flex items-center bg-gray-200 dark:bg-[#322D2A] rounded-full p-1 transition-colors duration-300 focus:outline-none border border-gray-300 dark:border-gray-600 overflow-hidden shrink-0" title="Toggle Theme">
+            <span class="text-[9px] font-medium text-gray-500 absolute end-2.5 dark:opacity-0 transition-opacity duration-300 tracking-wider">LIGHT</span>
+            <span class="text-[9px] font-medium text-accent absolute start-2.5 opacity-0 dark:opacity-100 transition-opacity duration-300 tracking-wider">DARK</span>
+            
+            <div class="w-[24px] h-[24px] bg-white dark:bg-brand-dark border border-gray-200 dark:border-gray-600 rounded-full shadow-sm transform transition-transform duration-300 flex items-center justify-center rtl:dark:-translate-x-[38px] ltr:dark:translate-x-[38px] dark:translate-x-[38px] z-10">
+              <i class="fas fa-sun text-[11px] text-accent dark:hidden block"></i>
+              <i class="fas fa-moon text-[11px] text-accent hidden dark:block"></i>
+            </div>
+          </button>
+          
+          <button id="rtl-toggle" class="text-xs font-medium text-gray-400 hover:text-accent transition-colors duration-300 ms-2 whitespace-nowrap" title="Toggle RTL">
+            RTL
+          </button>
+        </div>
+
+        <div class="xl:hidden flex items-center">
+          <button id="mobile-menu-button" class="text-gray-900 dark:text-brand-light hover:text-accent focus:outline-none transition duration-300">
+            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path id="menu-icon" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden xl:hidden bg-brand-light dark:bg-[#322D2A] border-b border-gray-200 dark:border-gray-800 shadow-2xl">
+      <div class="px-6 pt-4 pb-8 flex flex-col gap-0 max-h-[calc(100vh-90px)] overflow-y-auto">
+
+        <div class="border-b border-gray-100 dark:border-white/5">
+          <button id="mobile-home-dropdown" class="w-full flex items-center justify-between py-4 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300">
+            <span class="text-xs uppercase tracking-widest font-medium">Home</span>
+            <i class="fas fa-plus text-xs transition-transform duration-300" id="mobile-home-icon"></i>
+          </button>
+          <div id="mobile-home-menu" class="hidden pb-4 flex flex-col gap-3 ps-4 border-s-2 border-accent/20 ms-2">
+            <a href="index.html" class="block text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 transition duration-300 uppercase tracking-wider">01. Home Page</a>
+            <a href="home-2.html" class="block text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 transition duration-300 uppercase tracking-wider">02. Home Page</a>
+          </div>
+        </div>
+
+        <a href="about.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">About</a>
+        <a href="services.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">Services</a>
+        <a href="shop.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">Products Shop</a>
+        <a href="blog.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">Blog</a>
+        <a href="contact.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300 text-xs uppercase tracking-widest font-medium">Contact</a>
+
+        <div class="border-b border-gray-100 dark:border-white/5">
+          <button id="mobile-dashboard-dropdown" class="w-full flex items-center justify-between py-4 text-gray-900 dark:text-brand-light hover:text-accent transition duration-300">
+            <span class="text-xs uppercase tracking-widest font-medium">Dashboard</span>
+            <i class="fas fa-plus text-xs transition-transform duration-300" id="mobile-dashboard-icon"></i>
+          </button>
+          <div id="mobile-dashboard-menu" class="hidden pb-4 flex flex-col gap-4 ps-4 border-s-2 border-accent/20 ms-2 mt-2">
+            <a href="admin-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 transition duration-300 uppercase tracking-wider">
+              <i class="fas fa-user-shield w-6 me-2"></i> Admin Dashboard
+            </a>
+            <a href="client-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-accent dark:text-gray-400 transition duration-300 uppercase tracking-wider">
+              <i class="fas fa-user w-6 me-2"></i> Client Dashboard
+            </a>
+          </div>
+        </div>
+
+        <div class="pt-8 flex flex-col gap-4">
+          <button type="button" onclick="window.location.href='login.html'" class="flex items-center justify-center w-full bg-accent border-2 border-accent text-white hover:bg-transparent hover:text-accent px-4 py-3.5 font-semibold uppercase tracking-widest text-center transition duration-300 text-xs gap-2">
+            <span>Login</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </button>
+          
+          <a href="register.html" class="flex items-center justify-center w-full bg-transparent border-2 border-gray-300 dark:border-gray-700 text-brand-dark dark:text-brand-light hover:border-accent dark:hover:border-accent hover:text-accent dark:hover:text-accent px-4 py-3.5 font-medium uppercase tracking-widest text-center transition duration-300 text-xs gap-2">
+            <span>Register</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </a>
+          
+          <div class="flex justify-between items-center pt-6 pb-2 border-t border-gray-100 dark:border-white/5 mt-4">
+            <button id="mobile-theme-toggle" class="bg-gray-100 dark:bg-[#2A2623] border border-gray-200 dark:border-gray-700 rounded-full px-4 py-2 transition-colors flex items-center text-xs font-medium uppercase tracking-widest">
+              <span class="dark:hidden flex items-center text-accent"><i class="fas fa-sun me-2"></i> Light Active</span>
+              <span class="hidden dark:flex items-center text-accent"><i class="fas fa-moon me-2"></i> Dark Active</span>
+            </button>
+            <button id="mobile-rtl-toggle" class="text-gray-400 hover:text-accent transition-colors flex items-center text-xs font-medium uppercase tracking-widest">
+              <i class="fas fa-language me-2 text-lg"></i> RTL
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow flex flex-col pt-[90px]">
+    <section id="home" class="relative flex-grow flex items-center justify-center overflow-hidden py-16 lg:py-24 bg-gradient-to-br from-brand-light via-white to-orange-50/30 dark:from-brand-dark dark:via-[#35302D] dark:to-brand-dark">
+      <div class="absolute top-20 start-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-20 end-10 w-96 h-96 bg-brand-muted/10 dark:bg-accent/5 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+          <div class="text-brand-dark dark:text-brand-light flex flex-col gap-8 animate-fade-in">
+            <div class="inline-flex items-center px-4 py-2 border border-gray-200 dark:border-white/10 rounded-none bg-white/50 dark:bg-black/20 backdrop-blur-sm self-start">
+              <span class="w-1.5 h-1.5 bg-accent me-3"></span>
+              <span class="text-[10px] uppercase tracking-[0.2em] font-medium text-gray-500 dark:text-gray-400">Artisan Craft Studio</span>
+            </div>
+
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-semibold leading-tight tracking-tight">
+              CRAFT YOUR OWN <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#B86B52]">LUMINESCENCE.</span>
+            </h1>
+
+            <p class="text-lg text-brand-muted dark:text-gray-400 leading-relaxed font-medium max-w-lg">
+              Immerse yourself in the art of candle making. Join our guided workshops to blend custom fragrances, pour natural soy wax, and create your perfect ambient glow.
+            </p>
+
+            <div class="flex flex-wrap gap-4 pt-4">
+              <a href="register.html" class="inline-flex items-center justify-center px-8 py-4 bg-brand-dark dark:bg-brand-light text-brand-light dark:text-brand-dark hover:bg-accent dark:hover:bg-accent dark:hover:text-white font-medium uppercase tracking-widest text-xs transition-all duration-300 gap-2">
+                <span>Book a Workshop</span>
+                <i class="fas fa-arrow-right rtl:rotate-180"></i>
+              </a>
+              <a href="services.html" class="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-brand-light hover:border-accent hover:text-accent font-medium uppercase tracking-widest text-xs transition-all duration-300">
+                <span>Explore Classes</span>
+              </a>
+            </div>
+
+            <div class="grid grid-cols-3 gap-8 pt-10 border-t border-gray-200 dark:border-gray-700 mt-10">
+              <div>
+                <div class="text-3xl font-semibold text-gray-900 dark:text-brand-light mb-1">500<span class="text-accent">+</span></div>
+                <div class="text-[10px] uppercase tracking-widest text-brand-muted font-medium">Candles Poured</div>
+              </div>
+              <div>
+                <div class="text-3xl font-semibold text-gray-900 dark:text-brand-light mb-1">50<span class="text-accent">+</span></div>
+                <div class="text-[10px] uppercase tracking-widest text-brand-muted font-medium">Custom Scents</div>
+              </div>
+              <div>
+                <div class="text-3xl font-semibold text-gray-900 dark:text-brand-light mb-1">100<span class="text-accent">%</span></div>
+                <div class="text-[10px] uppercase tracking-widest text-brand-muted font-medium">Natural Soy Wax</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative animate-fade-in lg:ps-10">
+             <div class="relative overflow-hidden shadow-2xl h-[550px] lg:h-[650px] w-full group rounded-tl-[80px] rounded-br-[80px]">
+               <img src="https://images.unsplash.com/photo-1605814041724-4cb4422e5aee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Hand Poured Candles" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+               <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent"></div>
+               <div class="absolute bottom-0 start-0 w-full h-1 bg-gradient-to-r from-accent to-transparent"></div>
+             </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="py-24 bg-white dark:bg-[#3A3532] transition-colors duration-300 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          
+          <div class="relative">
+            <div class="relative z-10 rounded-tr-[60px] rounded-bl-[60px] overflow-hidden shadow-xl">
+              <img src="image/Where Fragrance Meets.avif" alt="Where Fragrance Meets" class="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="absolute -bottom-8 -right-8 w-64 h-64 bg-accent/20 dark:bg-accent/10 rounded-full blur-2xl -z-10"></div>
+            <div class="absolute -top-8 -left-8 w-48 h-48 border border-accent/30 dark:border-accent/20 rounded-tr-[50px] rounded-bl-[50px] -z-10"></div>
+          </div>
+
+          <div class="flex flex-col gap-6">
+            <div class="inline-flex items-center">
+              <span class="w-8 h-[1px] bg-accent me-3"></span>
+              <span class="text-xs uppercase tracking-[0.2em] font-medium text-accent">Our Heritage</span>
+            </div>
+            
+            <h2 class="text-4xl lg:text-5xl font-semibold text-brand-dark dark:text-brand-light leading-tight">
+              Where Fragrance Meets <br/> <span class="italic font-light text-brand-muted">Artistry.</span>
+            </h2>
+            
+            <p class="text-brand-muted dark:text-gray-400 leading-relaxed">
+              Founded in 2018, Lumina Studio began with a simple belief: scent has the power to transform a space and elevate the spirit. What started in a small kitchen has blossomed into a sanctuary for craft, community, and creativity.
+            </p>
+            
+            <p class="text-brand-muted dark:text-gray-400 leading-relaxed mb-4">
+              We source only the finest natural soy waxes, cotton wicks, and phthalate-free fragrance oils. Every workshop we host is an invitation to slow down, connect with your senses, and pour a little light into the world.
+            </p>
+
+            <div class="flex items-center gap-6 mt-4">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Founder" class="w-16 h-16 rounded-full object-cover border-2 border-brand-light dark:border-brand-dark shadow-md">
+              <div>
+                <h4 class="text-sm font-bold uppercase tracking-widest text-brand-dark dark:text-brand-light">Elena Rostova</h4>
+                <p class="text-xs text-accent uppercase tracking-wider mt-1">Founder & Lead Artisan</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="workshops" class="py-24 bg-brand-light dark:bg-[#322D2A] transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <div class="inline-flex items-center justify-center mb-4">
+            <span class="w-8 h-[1px] bg-accent me-3"></span>
+            <span class="text-xs uppercase tracking-[0.2em] font-medium text-accent">Join a Session</span>
+            <span class="w-8 h-[1px] bg-accent ms-3"></span>
+          </div>
+          <h2 class="text-4xl font-semibold text-brand-dark dark:text-brand-light mb-4">Upcoming Workshops</h2>
+          <p class="text-brand-muted dark:text-gray-400">Discover the joy of creating something beautiful with your own hands. Perfect for beginners and enthusiasts alike.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <div class="group bg-white dark:bg-[#3A3532] border border-gray-100 dark:border-white/5 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <div class="relative h-64 overflow-hidden">
+              <img src="image/The Signature Pour.avif" alt="The Signature Pour" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+              <div class="absolute top-4 right-4 bg-white dark:bg-brand-dark px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-accent">2 Seats Left</div>
+            </div>
+            <div class="p-8 flex flex-col gap-4">
+              <div class="flex justify-between items-center text-xs font-medium text-brand-muted dark:text-gray-400 uppercase tracking-wider">
+                <span><i class="far fa-calendar-alt me-2 text-accent"></i> Oct 12, 2026</span>
+                <span><i class="far fa-clock me-2 text-accent"></i> 2 Hours</span>
+              </div>
+              <h3 class="text-xl font-semibold text-brand-dark dark:text-brand-light group-hover:text-accent transition-colors">The Signature Pour</h3>
+              <p class="text-sm text-brand-muted dark:text-gray-400 line-clamp-2">Our classic introductory class. Learn the basics of wax melting, temperature control, and vessel preparation.</p>
+              <div class="pt-4 border-t border-gray-100 dark:border-white/5 flex justify-between items-center mt-2">
+                <span class="text-lg font-bold text-brand-dark dark:text-brand-light">$45</span>
+                <a href="services.html" class="text-xs font-bold uppercase tracking-widest text-accent hover:text-brand-dark dark:hover:text-white transition-colors">Book Now <i class="fas fa-arrow-right ms-1 text-[10px]"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="group bg-white dark:bg-[#3A3532] border border-gray-100 dark:border-white/5 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <div class="relative h-64 overflow-hidden">
+              <img src="image/Botanical Alchemy.avif" alt="Botanical Alchemy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+            <div class="p-8 flex flex-col gap-4">
+              <div class="flex justify-between items-center text-xs font-medium text-brand-muted dark:text-gray-400 uppercase tracking-wider">
+                <span><i class="far fa-calendar-alt me-2 text-accent"></i> Oct 15, 2026</span>
+                <span><i class="far fa-clock me-2 text-accent"></i> 2.5 Hours</span>
+              </div>
+              <h3 class="text-xl font-semibold text-brand-dark dark:text-brand-light group-hover:text-accent transition-colors">Botanical Alchemy</h3>
+              <p class="text-sm text-brand-muted dark:text-gray-400 line-clamp-2">Dive deep into fragrance wheel theory. Blend your own custom scent using premium essential and fragrance oils.</p>
+              <div class="pt-4 border-t border-gray-100 dark:border-white/5 flex justify-between items-center mt-2">
+                <span class="text-lg font-bold text-brand-dark dark:text-brand-light">$65</span>
+                <a href="services.html" class="text-xs font-bold uppercase tracking-widest text-accent hover:text-brand-dark dark:hover:text-white transition-colors">Book Now <i class="fas fa-arrow-right ms-1 text-[10px]"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="group bg-white dark:bg-[#3A3532] border border-gray-100 dark:border-white/5 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <div class="relative h-64 overflow-hidden">
+              <img src="image/Sip & Pour Date Night.avif" alt="Sip & Pour Date Night" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+              <div class="absolute top-4 right-4 bg-accent px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">Popular</div>
+            </div>
+            <div class="p-8 flex flex-col gap-4">
+              <div class="flex justify-between items-center text-xs font-medium text-brand-muted dark:text-gray-400 uppercase tracking-wider">
+                <span><i class="far fa-calendar-alt me-2 text-accent"></i> Oct 20, 2026</span>
+                <span><i class="far fa-clock me-2 text-accent"></i> 3 Hours</span>
+              </div>
+              <h3 class="text-xl font-semibold text-brand-dark dark:text-brand-light group-hover:text-accent transition-colors">Sip & Pour Date Night</h3>
+              <p class="text-sm text-brand-muted dark:text-gray-400 line-clamp-2">Bring a partner, enjoy complimentary wine, and craft matching candles in an intimate, relaxing atmosphere.</p>
+              <div class="pt-4 border-t border-gray-100 dark:border-white/5 flex justify-between items-center mt-2">
+                <span class="text-lg font-bold text-brand-dark dark:text-brand-light">$110 <span class="text-xs text-brand-muted font-normal">/ pair</span></span>
+                <a href="services.html" class="text-xs font-bold uppercase tracking-widest text-accent hover:text-brand-dark dark:hover:text-white transition-colors">Book Now <i class="fas fa-arrow-right ms-1 text-[10px]"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="text-center mt-12">
+          <a href="services.html" class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-brand-dark dark:text-brand-light hover:text-accent dark:hover:text-accent transition-colors border-b-2 border-accent pb-1">
+            View Full Calendar <i class="fas fa-long-arrow-alt-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="py-24 bg-white dark:bg-[#2A2623] transition-colors duration-300 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-light dark:bg-[#322D2A] -skew-x-12 translate-x-20 opacity-50 z-0"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="flex flex-col items-center text-center mx-auto mb-16 gap-4 max-w-2xl">
+          <div class="w-full">
+            <div class="inline-flex items-center justify-center mb-4">
+              <span class="w-8 h-[1px] bg-accent me-3"></span>
+              <span class="text-xs uppercase tracking-[0.2em] font-medium text-accent">The Methodology</span>
+              <span class="w-8 h-[1px] bg-accent ms-3"></span>
+            </div>
+            <h2 class="text-4xl font-semibold text-brand-dark dark:text-brand-light mb-4">How The Magic Happens</h2>
+          </div>
+          <p class="text-brand-muted dark:text-gray-400 text-sm">A meticulous four-step journey ensures every candle poured at Lumina Studio burns cleanly, brightly, and beautifully.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+          <div class="hidden lg:block absolute top-12 left-[10%] right-[10%] h-[1px] bg-gray-200 dark:bg-gray-700 z-0"></div>
+
+          <div class="relative z-10 group">
+            <div class="w-24 h-24 bg-brand-light dark:bg-[#3A3532] border border-gray-200 dark:border-white/10 rounded-full flex items-center justify-center mx-auto mb-6 transition-all duration-300 group-hover:bg-accent group-hover:border-accent">
+              <i class="fas fa-leaf text-3xl text-brand-muted dark:text-gray-400 group-hover:text-white transition-colors"></i>
+            </div>
+            <div class="text-center">
+              <div class="text-accent text-xs font-bold uppercase tracking-widest mb-2">Step 01</div>
+              <h4 class="text-lg font-semibold text-brand-dark dark:text-brand-light mb-3">Sourcing</h4>
+              <p class="text-sm text-brand-muted dark:text-gray-400">We select only 100% natural, biodegradable soy wax and lead-free cotton wicks for a sustainable burn.</p>
+            </div>
+          </div>
+
+          <div class="relative z-10 group">
+            <div class="w-24 h-24 bg-brand-light dark:bg-[#3A3532] border border-gray-200 dark:border-white/10 rounded-full flex items-center justify-center mx-auto mb-6 transition-all duration-300 group-hover:bg-accent group-hover:border-accent">
+              <i class="fas fa-flask text-3xl text-brand-muted dark:text-gray-400 group-hover:text-white transition-colors"></i>
+            </div>
+            <div class="text-center">
+              <div class="text-accent text-xs font-bold uppercase tracking-widest mb-2">Step 02</div>
+              <h4 class="text-lg font-semibold text-brand-dark dark:text-brand-light mb-3">Blending</h4>
+              <p class="text-sm text-brand-muted dark:text-gray-400">Our artisans expertly combine top, middle, and base notes to create sophisticated, layered scent profiles.</p>
+            </div>
+          </div>
+
+          <div class="relative z-10 group">
+            <div class="w-24 h-24 bg-brand-light dark:bg-[#3A3532] border border-gray-200 dark:border-white/10 rounded-full flex items-center justify-center mx-auto mb-6 transition-all duration-300 group-hover:bg-accent group-hover:border-accent">
+              <i class="fas fa-fire-alt text-3xl text-brand-muted dark:text-gray-400 group-hover:text-white transition-colors"></i>
+            </div>
+            <div class="text-center">
+              <div class="text-accent text-xs font-bold uppercase tracking-widest mb-2">Step 03</div>
+              <h4 class="text-lg font-semibold text-brand-dark dark:text-brand-light mb-3">Pouring</h4>
+              <p class="text-sm text-brand-muted dark:text-gray-400">Wax is heated to the precise temperature before being carefully hand-poured into prepared vessels.</p>
+            </div>
+          </div>
+
+          <div class="relative z-10 group">
+            <div class="w-24 h-24 bg-brand-light dark:bg-[#3A3532] border border-gray-200 dark:border-white/10 rounded-full flex items-center justify-center mx-auto mb-6 transition-all duration-300 group-hover:bg-accent group-hover:border-accent">
+              <i class="fas fa-box-open text-3xl text-brand-muted dark:text-gray-400 group-hover:text-white transition-colors"></i>
+            </div>
+            <div class="text-center">
+              <div class="text-accent text-xs font-bold uppercase tracking-widest mb-2">Step 04</div>
+              <h4 class="text-lg font-semibold text-brand-dark dark:text-brand-light mb-3">Curing</h4>
+              <p class="text-sm text-brand-muted dark:text-gray-400">Candles rest and cure for two weeks, allowing the fragrance to fully bind with the wax for maximum throw.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="py-24 bg-accent/5 dark:bg-[#35302D] transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-semibold text-brand-dark dark:text-brand-light mb-4">Whispers & Flames</h2>
+          <p class="text-brand-muted dark:text-gray-400 text-sm uppercase tracking-widest">What our community is saying</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          
+          <div class="bg-white dark:bg-[#3A3532] p-8 border-t-4 border-accent shadow-sm">
+            <div class="flex text-accent text-sm mb-4">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="text-brand-muted dark:text-gray-300 italic mb-6 leading-relaxed">"An incredibly therapeutic experience. The studio smells divine, the instructors are patient, and my custom 'Autumn Woods' candle burns perfectly."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-brand-dark dark:text-brand-light font-bold">SM</div>
+              <div>
+                <h5 class="text-sm font-bold text-brand-dark dark:text-brand-light">Sarah M.</h5>
+                <p class="text-[10px] uppercase tracking-widest text-brand-muted">Workshop Attendee</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-[#3A3532] p-8 border-t-4 border-brand-dark dark:border-brand-light shadow-sm">
+            <div class="flex text-accent text-sm mb-4">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="text-brand-muted dark:text-gray-300 italic mb-6 leading-relaxed">"We booked a private class for our team building event. It was flawlessly executed. Everyone loved blending their own scents. Highly recommended!"</p>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-brand-dark dark:text-brand-light font-bold">JD</div>
+              <div>
+                <h5 class="text-sm font-bold text-brand-dark dark:text-brand-light">James D.</h5>
+                <p class="text-[10px] uppercase tracking-widest text-brand-muted">Corporate Client</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-[#3A3532] p-8 border-t-4 border-accent shadow-sm">
+            <div class="flex text-accent text-sm mb-4">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="text-brand-muted dark:text-gray-300 italic mb-6 leading-relaxed">"The aesthetic of Lumina Studio is unmatched. Not only did I learn the chemistry behind candle making, but I also left with a beautiful centerpiece."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-brand-dark dark:text-brand-light font-bold">AL</div>
+              <div>
+                <h5 class="text-sm font-bold text-brand-dark dark:text-brand-light">Amanda L.</h5>
+                <p class="text-[10px] uppercase tracking-widest text-brand-muted">Design Enthusiast</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="bestsellers" class="py-24 bg-brand-light dark:bg-[#322D2A] border-b border-gray-200 dark:border-white/10 transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col items-center text-center mb-12 gap-6">
+          <div>
+            <h2 class="text-3xl font-semibold text-brand-dark dark:text-brand-light mb-2">The Curated Collection</h2>
+            <p class="text-brand-muted dark:text-gray-400 text-sm">Shop our signature hand-poured creations.</p>
+          </div>
+          <div class="flex justify-center flex-wrap gap-4">
+            <button class="text-xs font-bold uppercase tracking-widest text-brand-dark dark:text-brand-light border-b-2 border-accent pb-1">All</button>
+            <button class="text-xs font-bold uppercase tracking-widest text-brand-muted hover:text-accent transition-colors pb-1">Woody</button>
+            <button class="text-xs font-bold uppercase tracking-widest text-brand-muted hover:text-accent transition-colors pb-1">Floral</button>
+            <button class="text-xs font-bold uppercase tracking-widest text-brand-muted hover:text-accent transition-colors pb-1">Fresh</button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <div class="group">
+            <div class="relative h-80 bg-gray-100 dark:bg-[#3A3532] overflow-hidden mb-4">
+              <img src="image\Sandalwood & Rose.jpg" alt="Sandalwood Rose" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <button class="bg-white text-brand-dark px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-accent hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300">Add to Cart</button>
+              </div>
+            </div>
+            <div class="text-center">
+              <h3 class="text-base font-semibold text-brand-dark dark:text-brand-light mb-1">Sandalwood & Rose</h3>
+              <p class="text-xs text-brand-muted mb-2">Woody / Floral</p>
+              <span class="text-sm font-bold text-brand-dark dark:text-white">$32.00</span>
+            </div>
+          </div>
+
+          <div class="group">
+            <div class="relative h-80 bg-gray-100 dark:bg-[#3A3532] overflow-hidden mb-4">
+              <img src="image/Bergamot & Vetiver.avif" alt="Bergamot Vetiver" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute top-3 left-3 bg-brand-dark dark:bg-brand-light text-brand-light dark:text-brand-dark px-2 py-1 text-[9px] font-bold uppercase tracking-widest">New</div>
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <button class="bg-white text-brand-dark px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-accent hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300">Add to Cart</button>
+              </div>
+            </div>
+            <div class="text-center">
+              <h3 class="text-base font-semibold text-brand-dark dark:text-brand-light mb-1">Bergamot & Vetiver</h3>
+              <p class="text-xs text-brand-muted mb-2">Fresh / Earthy</p>
+              <span class="text-sm font-bold text-brand-dark dark:text-white">$34.00</span>
+            </div>
+          </div>
+
+          <div class="group">
+            <div class="relative h-80 bg-gray-100 dark:bg-[#3A3532] overflow-hidden mb-4">
+              <img src="image/Midnight Lavender.avif" alt="Lavender Vanilla" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <button class="bg-white text-brand-dark px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-accent hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300">Add to Cart</button>
+              </div>
+            </div>
+            <div class="text-center">
+              <h3 class="text-base font-semibold text-brand-dark dark:text-brand-light mb-1">Midnight Lavender</h3>
+              <p class="text-xs text-brand-muted mb-2">Floral / Sweet</p>
+              <span class="text-sm font-bold text-brand-dark dark:text-white">$28.00</span>
+            </div>
+          </div>
+
+          <div class="group">
+            <div class="relative h-80 bg-gray-100 dark:bg-[#3A3532] overflow-hidden mb-4">
+              <img src="image/Amber & Smoke.avif" alt="Amber Smoke" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <button class="bg-white text-brand-dark px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-accent hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300">Add to Cart</button>
+              </div>
+            </div>
+            <div class="text-center">
+              <h3 class="text-base font-semibold text-brand-dark dark:text-brand-light mb-1">Amber & Smoke</h3>
+              <p class="text-xs text-brand-muted mb-2">Woody / Spicy</p>
+              <span class="text-sm font-bold text-brand-dark dark:text-white">$36.00</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="shop.html" class="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-gray-300 dark:border-gray-600 text-brand-dark dark:text-brand-light hover:border-accent hover:text-accent font-medium uppercase tracking-widest text-xs transition-all duration-300">
+            View All Products
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-brand-dark text-brand-light pt-24 pb-12 mt-auto border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        
+        <div>
+          <h3 class="text-3xl font-semibold tracking-tight uppercase mb-6 text-brand-light">Lumina<span class="text-accent">Studio.</span></h3>
+          <p class="text-brand-muted mb-8 font-medium leading-relaxed text-base">
+            Guiding you through the therapeutic art of candle making. Discover new scents, connect with others, and take home a masterpiece you created yourself.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="w-12 h-12 border border-white/10 text-brand-light hover:border-accent hover:text-accent flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-facebook-f text-base"></i>
+            </a>
+            <a href="#" class="w-12 h-12 border border-white/10 text-brand-light hover:border-accent hover:text-accent flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-instagram text-base"></i>
+            </a>
+            <a href="#" class="w-12 h-12 border border-white/10 text-brand-light hover:border-accent hover:text-accent flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-pinterest-p text-base"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-medium mb-8 text-brand-light">Quick Links</h4>
+          <ul class="flex flex-col gap-5">
+            <li><a href="index.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Home</a></li>
+            <li><a href="about.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">About</a></li>
+            <li><a href="shop.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Products Shop</a></li>
+            <li><a href="blog.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-medium mb-8 text-brand-light">Our Offerings</h4>
+          <ul class="flex flex-col gap-5">
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Beginner Pouring Class</a></li>
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Scent Blending Masterclass</a></li>
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Couples Date Night</a></li>
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Private Group Events</a></li>
+            <li><a href="services.html" class="text-base text-brand-muted hover:text-accent transition-colors duration-300 font-medium">Corporate Gifting & Bonding</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-medium mb-8 text-brand-light">Visit Our Studio</h4>
+          <ul class="flex flex-col gap-6">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt text-accent mt-1 me-4 text-base"></i>
+              <span class="text-base text-brand-muted font-medium">Hosur, Tamil Nadu, India<br/>(Studio Address provided upon booking)</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone text-accent me-4 text-base"></i>
+              <a href="tel:+919876543210" class="text-base text-brand-muted hover:text-accent transition-colors font-medium">+91 98765 43210</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope text-accent me-4 text-base"></i>
+              <a href="mailto:hello@luminastudio.com" class="text-base text-brand-muted hover:text-accent transition-colors font-medium">hello@luminastudio.com</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-brand-muted text-sm tracking-wider uppercase mb-4 md:mb-0 font-medium">
+          © 2026 Lumina Studio. All rights reserved.
+        </p>
+        <div class="flex gap-6">
+          <a href="login.html" class="text-brand-muted hover:text-accent text-sm tracking-wider uppercase font-medium transition-colors duration-300">Member Login</a>
+          <a href="#" class="text-brand-muted hover:text-accent text-sm tracking-wider uppercase font-medium transition-colors duration-300">Privacy Policy</a>
+          <a href="#" class="text-brand-muted hover:text-accent text-sm tracking-wider uppercase font-medium transition-colors duration-300">Terms of Service</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+    const html = document.documentElement;
+
+    function toggleTheme() {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+    if (localStorage.getItem('theme') === 'dark') html.classList.add('dark');
+
+    // RTL Toggle
+    const rtlToggle = document.getElementById('rtl-toggle');
+    const mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
+
+    function toggleRTL() {
+      if (html.getAttribute('dir') === 'rtl') {
+        html.removeAttribute('dir');
+        localStorage.setItem('direction', 'ltr');
+      } else {
+        html.setAttribute('dir', 'rtl');
+        localStorage.setItem('direction', 'rtl');
+      }
+    }
+
+    if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+    if (mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
+    if (localStorage.getItem('direction') === 'rtl') html.setAttribute('dir', 'rtl');
+
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+      // Fix for Flexbox fallback on mobile menu open
+      if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('flex');
+      } else {
+          mobileMenu.classList.remove('flex');
+      
+      }
+    });
+
+    // Mobile Dropdowns Toggle Function
+    function setupMobileDropdown(dropdownId, menuId, iconId) {
+      const dropdown = document.getElementById(dropdownId);   
+      const menu = document.getElementById(menuId);
+      const icon = document.getElementById(iconId);
+      
+      if(dropdown && menu && icon) {
+        dropdown.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+          if(menu.classList.contains('hidden')) {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+            menu.classList.remove('flex'); // Add this for flex compatibility
+          } else {
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
+            menu.classList.add('flex'); // Add this for flex compatibility
+          }
+        });
+      }
+    } 
+    // Initialize dropdowns
+    setupMobileDropdown('mobile-home-dropdown', 'mobile-home-menu', 'mobile-home-icon');
+    setupMobileDropdown('mobile-dashboard-dropdown', 'mobile-dashboard-menu', 'mobile-dashboard-icon');
+
+  </script>
+</body>
+</html>
