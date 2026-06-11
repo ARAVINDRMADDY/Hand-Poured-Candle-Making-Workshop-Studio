@@ -65,27 +65,32 @@
 
       <nav class="flex-1 overflow-y-auto py-8 flex flex-col gap-2 scrollbar-thin">
         
-        <p class="px-8 text-[10px] font-medium text-brand-muted uppercase tracking-[0.2em] mb-2">Menu</p>
+        <p class="px-8 text-[10px] font-medium text-gray-400 uppercase tracking-[0.2em] mb-2">Menu</p>
         
         <button onclick="showSection('all')" id="nav-all" class="nav-btn w-full text-start flex items-center gap-4 px-8 py-3 bg-white/5 border-s-2 border-accent text-accent transition-all duration-300 group">
           <i class="fas fa-home w-5 text-center"></i>
           <span class="text-xs uppercase tracking-widest font-semibold">Home</span>
         </button>
 
-        <button onclick="showSection('bookings')" id="nav-bookings" class="nav-btn w-full text-start flex items-center gap-4 px-8 py-3 text-brand-muted border-s-2 border-transparent hover:border-accent hover:text-accent hover:bg-white/5 transition-all duration-300 group">
+        <button onclick="showSection('bookings')" id="nav-bookings" class="nav-btn w-full text-start flex items-center gap-4 px-8 py-3 text-gray-400 border-s-2 border-transparent hover:border-accent hover:text-accent hover:bg-white/5 transition-all duration-300 group">
           <i class="fas fa-calendar-alt w-5 text-center transition-colors"></i>
           <span class="text-xs uppercase tracking-widest font-medium">My Bookings</span>
           <span class="ms-auto bg-accent text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">2</span>
         </button>
 
-        <button onclick="showSection('discover')" id="nav-discover" class="nav-btn w-full text-start flex items-center gap-4 px-8 py-3 text-brand-muted border-s-2 border-transparent hover:border-accent hover:text-accent hover:bg-white/5 transition-all duration-300 group">
+        <button onclick="showSection('discover')" id="nav-discover" class="nav-btn w-full text-start flex items-center gap-4 px-8 py-3 text-gray-400 border-s-2 border-transparent hover:border-accent hover:text-accent hover:bg-white/5 transition-all duration-300 group">
           <i class="fas fa-compass w-5 text-center transition-colors"></i>
           <span class="text-xs uppercase tracking-widest font-medium">Discover</span>
         </button>
 
-        <button onclick="showSection('profile')" id="nav-profile" class="nav-btn w-full text-start flex items-center gap-4 px-8 py-3 text-brand-muted border-s-2 border-transparent hover:border-accent hover:text-accent hover:bg-white/5 transition-all duration-300 group">
+        <button onclick="showSection('profile')" id="nav-profile" class="nav-btn w-full text-start flex items-center gap-4 px-8 py-3 text-gray-400 border-s-2 border-transparent hover:border-accent hover:text-accent hover:bg-white/5 transition-all duration-300 group">
           <i class="fas fa-user-circle w-5 text-center transition-colors"></i>
           <span class="text-xs uppercase tracking-widest font-medium">Profile</span>
+        </button>
+
+        <button onclick="showSection('tutorials')" id="nav-tutorials" class="nav-btn w-full text-start flex items-center gap-4 px-8 py-3 text-gray-400 border-s-2 border-transparent hover:border-accent hover:text-accent hover:bg-white/5 transition-all duration-300 group">
+          <i class="fas fa-play-circle w-5 text-center transition-colors"></i>
+          <span class="text-xs uppercase tracking-widest font-medium">Tutorials</span>
         </button>
 
       </nav>
@@ -114,13 +119,13 @@
         <div class="flex items-center gap-4">
           
           <div class="hidden md:flex relative group">
-            <input type="text" placeholder="SEARCH WORKSHOPS..." class="ps-10 pe-4 py-3 bg-transparent border border-gray-300 dark:border-gray-600 rounded-full text-brand-dark dark:text-brand-light text-xs uppercase tracking-widest focus:outline-none focus:border-accent w-56 lg:w-72 transition-all">
-            <i class="fas fa-search absolute start-4 top-3.5 text-brand-muted group-focus-within:text-accent transition-colors text-xs"></i>
+            <input type="text" placeholder="SEARCH WORKSHOPS..." class="ps-10 pe-4 py-3 bg-transparent border border-gray-300 dark:border-gray-600 rounded-full text-brand-dark dark:text-brand-light text-xs uppercase tracking-widest focus:outline-none focus:border-accent w-40 lg:w-48 xl:w-72 transition-all">
+            <i class="fas fa-search absolute start-4 top-3.5 text-gray-600 group-focus-within:text-accent transition-colors text-xs"></i>
           </div>
 
           <div class="h-8 w-px bg-gray-200 dark:bg-gray-700 mx-2 hidden sm:block"></div>
 
-          <button id="rtl-toggle" class="text-xs font-medium uppercase tracking-widest text-brand-muted hover:text-accent transition-colors duration-300" title="Toggle RTL">
+          <button id="rtl-toggle" class="text-xs font-medium uppercase tracking-widest text-gray-600 hover:text-accent transition-colors duration-300" title="Toggle RTL">
             <span id="rtl-text">RTL</span>
           </button>
 
@@ -135,9 +140,10 @@
           </button>
 
           <div class="flex items-center gap-3 group cursor-pointer border-s border-gray-200 dark:border-gray-700 ps-4">
-            <div class="hidden sm:block text-end">
+            <div class="hidden xl:block text-end">
               <p class="text-[11px] uppercase tracking-wider font-semibold text-brand-dark dark:text-brand-light leading-tight">Emily Blunt</p>
               <p class="text-[9px] uppercase tracking-widest text-accent leading-tight">Premium Member</p>
+              <p class="text-[9px] uppercase tracking-widest text-gray-500 leading-tight mt-1" title="Your Fragrance Profile"><i class="fas fa-leaf text-accent me-1"></i> Earthy Wanderer</p>
             </div>
             <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client Profile" class="w-9 h-9 object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-300 border-2 border-gray-200 dark:border-gray-700">
           </div>
@@ -150,26 +156,43 @@
         <div id="section-overview" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <div class="bg-white dark:bg-[#322D2A] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 relative group hover:border-accent transition-colors">
             <div class="absolute top-0 start-0 w-full h-1 bg-gradient-to-r from-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-t-2xl"></div>
-            <p class="text-[10px] text-brand-muted dark:text-gray-400 font-medium uppercase tracking-widest mb-2">Next Workshop</p>
+            <p class="text-[10px] text-gray-600 dark:text-gray-400 font-medium uppercase tracking-widest mb-2">Next Workshop</p>
             <h3 class="text-xl font-semibold text-brand-dark dark:text-brand-light truncate">Scent Blending</h3>
             <div class="mt-4 flex items-center text-[10px] font-medium tracking-wider uppercase">
               <span class="text-accent flex items-center gap-1"><i class="far fa-clock"></i> Tomorrow</span>
-              <span class="text-brand-muted ms-2">10:00 AM</span>
+              <span class="text-gray-600 ms-2">10:00 AM</span>
             </div>
           </div>
 
-          <div class="bg-white dark:bg-[#322D2A] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 relative group hover:border-accent transition-colors">
+          <div class="bg-white dark:bg-[#322D2A] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 relative group hover:border-accent transition-colors col-span-1 sm:col-span-2 lg:col-span-1">
             <div class="absolute top-0 start-0 w-full h-1 bg-gradient-to-r from-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-t-2xl"></div>
-            <p class="text-[10px] text-brand-muted dark:text-gray-400 font-medium uppercase tracking-widest mb-2">Reward Points</p>
-            <h3 class="text-3xl font-semibold text-brand-dark dark:text-brand-light">450</h3>
+            <div class="flex justify-between items-center mb-2">
+              <p class="text-[10px] text-gray-600 dark:text-gray-400 font-medium uppercase tracking-widest">Loyalty Punch Card</p>
+              <span class="text-[9px] bg-accent/10 text-accent px-2 py-0.5 rounded-full font-bold uppercase tracking-widest">3 / 10</span>
+            </div>
+            <div class="flex items-center gap-2 mb-2">
+              <h3 class="text-xl font-semibold text-brand-dark dark:text-brand-light">Free Workshop</h3>
+            </div>
+            <div class="grid grid-cols-5 gap-2 mt-4 relative">
+              <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white shadow-md shadow-accent/20 transition-transform hover:scale-110 cursor-default" title="Punch 1"><i class="fas fa-check text-xs"></i></div>
+              <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white shadow-md shadow-accent/20 transition-transform hover:scale-110 cursor-default" title="Punch 2"><i class="fas fa-check text-xs"></i></div>
+              <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white shadow-md shadow-accent/20 transition-transform hover:scale-110 cursor-default" title="Punch 3"><i class="fas fa-check text-xs"></i></div>
+              <div class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700"></div>
+              <div class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700"></div>
+              <div class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700"></div>
+              <div class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700"></div>
+              <div class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700"></div>
+              <div class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700"></div>
+              <div class="w-8 h-8 rounded-full bg-accent/10 border-2 border-dashed border-accent flex items-center justify-center transition-colors hover:bg-accent/20 cursor-pointer" title="Reward!"><i class="fas fa-gift text-accent text-xs"></i></div>
+            </div>
             <div class="mt-4 flex items-center text-[10px] font-medium tracking-wider uppercase">
-              <span class="text-brand-muted">50 Points to next reward</span>
+              <span class="text-gray-600">7 punches to next reward</span>
             </div>
           </div>
 
           <div class="bg-white dark:bg-[#322D2A] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 relative group hover:border-accent transition-colors">
             <div class="absolute top-0 start-0 w-full h-1 bg-gradient-to-r from-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-t-2xl"></div>
-            <p class="text-[10px] text-brand-muted dark:text-gray-400 font-medium uppercase tracking-widest mb-2">Classes Attended</p>
+            <p class="text-[10px] text-gray-600 dark:text-gray-400 font-medium uppercase tracking-widest mb-2">Classes Attended</p>
             <h3 class="text-3xl font-semibold text-brand-dark dark:text-brand-light">12</h3>
             <div class="mt-4 flex items-center text-[10px] font-medium tracking-wider uppercase">
               <span class="text-accent flex items-center gap-1"><i class="fas fa-fire"></i> 3 Month Streak</span>
@@ -178,11 +201,11 @@
 
           <div class="bg-white dark:bg-[#322D2A] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 relative group hover:border-accent transition-colors">
             <div class="absolute top-0 start-0 w-full h-1 bg-gradient-to-r from-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-t-2xl"></div>
-            <p class="text-[10px] text-brand-muted dark:text-gray-400 font-medium uppercase tracking-widest mb-2">Membership</p>
+            <p class="text-[10px] text-gray-600 dark:text-gray-400 font-medium uppercase tracking-widest mb-2">Membership</p>
             <h3 class="text-xl font-semibold text-brand-dark dark:text-brand-light">Premium</h3>
             <div class="mt-4 flex items-center text-[10px] font-medium tracking-wider uppercase">
               <span class="text-green-500">Active</span>
-              <span class="text-brand-muted ms-2">Renews Nov 15</span>
+              <span class="text-gray-600 ms-2">Renews Nov 15</span>
             </div>
           </div>
         </div>
@@ -198,7 +221,7 @@
             <div class="overflow-x-auto">
               <table class="w-full text-start whitespace-nowrap">
                 <thead>
-                  <tr class="bg-gray-50 dark:bg-black/20 text-brand-muted dark:text-gray-400 text-[10px] uppercase tracking-widest border-b border-gray-100 dark:border-white/5">
+                  <tr class="bg-gray-50 dark:bg-black/20 text-gray-600 dark:text-gray-400 text-[10px] uppercase tracking-widest border-b border-gray-100 dark:border-white/5">
                     <th class="px-6 py-4 font-medium text-start">Workshop Name</th>
                     <th class="px-6 py-4 font-medium text-start">Date & Time</th>
                     <th class="px-6 py-4 font-medium text-start">Instructor</th>
@@ -209,8 +232,8 @@
                 <tbody class="divide-y divide-gray-100 dark:divide-white/5 text-sm">
                   <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group">
                     <td class="px-6 py-5 font-semibold text-brand-dark dark:text-brand-light">Signature Scent Blending</td>
-                    <td class="px-6 py-5 text-brand-muted dark:text-gray-400 text-xs tracking-wider font-medium">OCT 28, 10:00 AM</td>
-                    <td class="px-6 py-5 text-brand-muted dark:text-gray-400 text-xs tracking-wider font-medium">Sarah Jenkins</td>
+                    <td class="px-6 py-5 text-gray-600 dark:text-gray-400 text-xs tracking-wider font-medium">OCT 28, 10:00 AM</td>
+                    <td class="px-6 py-5 text-gray-600 dark:text-gray-400 text-xs tracking-wider font-medium">Sarah Jenkins</td>
                     <td class="px-6 py-5">
                       <span class="text-[10px] font-semibold uppercase tracking-widest text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded-full">Confirmed</span>
                     </td>
@@ -220,8 +243,8 @@
                   </tr>
                   <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group">
                     <td class="px-6 py-5 font-semibold text-brand-dark dark:text-brand-light">Advanced Wax Pouring</td>
-                    <td class="px-6 py-5 text-brand-muted dark:text-gray-400 text-xs tracking-wider font-medium">NOV 12, 2:00 PM</td>
-                    <td class="px-6 py-5 text-brand-muted dark:text-gray-400 text-xs tracking-wider font-medium">Michael Chang</td>
+                    <td class="px-6 py-5 text-gray-600 dark:text-gray-400 text-xs tracking-wider font-medium">NOV 12, 2:00 PM</td>
+                    <td class="px-6 py-5 text-gray-600 dark:text-gray-400 text-xs tracking-wider font-medium">Michael Chang</td>
                     <td class="px-6 py-5">
                       <span class="text-[10px] font-semibold uppercase tracking-widest text-accent bg-accent/10 px-2 py-1 rounded-full">Waitlisted</span>
                     </td>
@@ -244,7 +267,7 @@
                 </div>
                 <div class="flex-1 min-w-0">
                   <div class="flex justify-between items-start">
-                    <h4 class="text-sm font-semibold text-brand-dark dark:text-brand-light uppercase tracking-wider truncate">Holiday Scents</h4>
+                     <h4 class="text-sm font-semibold text-brand-dark dark:text-brand-light uppercase tracking-wider truncate">Holiday Scents</h4>
                   </div>
                   <p class="text-[10px] font-medium uppercase tracking-widest text-accent mt-1">Special Event • Nov 20</p>
                 </div>
@@ -258,7 +281,7 @@
                 </div>
                 <div class="flex-1 min-w-0">
                   <div class="flex justify-between items-start">
-                    <h4 class="text-sm font-semibold text-brand-dark dark:text-brand-light uppercase tracking-wider truncate">Aromatherapy 101</h4>
+                     <h4 class="text-sm font-semibold text-brand-dark dark:text-brand-light uppercase tracking-wider truncate">Aromatherapy 101</h4>
                   </div>
                   <p class="text-[10px] font-medium uppercase tracking-widest text-accent mt-1">Beginner Class • Dec 02</p>
                 </div>
@@ -269,6 +292,41 @@
             <button class="w-full mt-6 py-3 border border-gray-200 dark:border-gray-600 rounded-full text-[10px] font-bold uppercase tracking-widest text-brand-dark dark:text-brand-light hover:border-accent hover:text-accent transition-colors">
               Browse All Classes
             </button>
+          </div>
+
+          <div id="section-tutorials" class="bg-white dark:bg-[#322D2A] rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 p-6 lg:col-span-3 hidden">
+            <h3 class="text-xs font-semibold uppercase tracking-widest text-brand-dark dark:text-brand-light mb-6">Masterclass Video Tutorials</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              
+              <div class="group cursor-pointer">
+                <div class="relative w-full h-48 rounded-xl overflow-hidden mb-4 border border-gray-200 dark:border-gray-700">
+                  <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tutorial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                  <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
+                    <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                      <i class="fas fa-play text-accent ms-1"></i>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-2 right-2 bg-black/80 text-white text-[10px] px-2 py-1 rounded font-medium">12:45</div>
+                </div>
+                <h4 class="text-sm font-bold text-brand-dark dark:text-brand-light group-hover:text-accent transition-colors">Advanced Botanical Embedding</h4>
+                <p class="text-xs text-gray-500 mt-1">Learn how to properly place dried flowers without clogging the wick.</p>
+              </div>
+              
+              <div class="group cursor-pointer">
+                <div class="relative w-full h-48 rounded-xl overflow-hidden mb-4 border border-gray-200 dark:border-gray-700">
+                  <img src="image/The Signature Pour.avif" alt="Tutorial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                  <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
+                    <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                      <i class="fas fa-play text-accent ms-1"></i>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-2 right-2 bg-black/80 text-white text-[10px] px-2 py-1 rounded font-medium">08:20</div>
+                </div>
+                <h4 class="text-sm font-bold text-brand-dark dark:text-brand-light group-hover:text-accent transition-colors">Scent Throw Optimization</h4>
+                <p class="text-xs text-gray-500 mt-1">Maximize your hot and cold scent throw using proper curing techniques.</p>
+              </div>
+
+            </div>
           </div>
 
         </div>
@@ -282,12 +340,12 @@
     function showSection(sectionId) {
       document.querySelectorAll('.nav-btn').forEach(btn => {
         btn.classList.remove('bg-white/5', 'border-accent', 'text-accent');
-        btn.classList.add('border-transparent', 'text-brand-muted');
+        btn.classList.add('border-transparent', 'text-gray-400');
       });
       
       const activeBtn = document.getElementById('nav-' + sectionId);
       if(activeBtn) {
-        activeBtn.classList.remove('border-transparent', 'text-brand-muted');
+        activeBtn.classList.remove('border-transparent', 'text-gray-400');
         activeBtn.classList.add('bg-white/5', 'border-accent', 'text-accent');
       }
 
@@ -295,16 +353,14 @@
       const listsContainer = document.getElementById('lists-container');
       const bookings = document.getElementById('section-bookings');
       const discover = document.getElementById('section-discover');
+      const tutorials = document.getElementById('section-tutorials');
 
-      // Simple handling for client view (You can expand this if you add heavy dedicated pages)
-      // Since it's a dashboard view, we'll just keep everything visible for 'all'
-      // and isolate sections when others are clicked.
-      
       if (sectionId === 'all') {
         overview.classList.remove('hidden');
         listsContainer.classList.remove('hidden');
         bookings.classList.remove('hidden');
         discover.classList.remove('hidden');
+        tutorials.classList.add('hidden');
         
         listsContainer.classList.add('lg:grid-cols-3');
         bookings.classList.add('lg:col-span-2');
@@ -314,6 +370,7 @@
         listsContainer.classList.remove('hidden');
         bookings.classList.remove('hidden');
         discover.classList.add('hidden');
+        tutorials.classList.add('hidden');
         
         listsContainer.classList.remove('lg:grid-cols-3');
         listsContainer.classList.add('lg:grid-cols-1');
@@ -324,10 +381,20 @@
         listsContainer.classList.remove('hidden');
         bookings.classList.add('hidden');
         discover.classList.remove('hidden');
+        tutorials.classList.add('hidden');
         
         listsContainer.classList.remove('lg:grid-cols-3');
         listsContainer.classList.add('lg:grid-cols-1');
         discover.classList.remove('lg:col-span-1');
+      } else if (sectionId === 'tutorials') {
+        overview.classList.add('hidden');
+        listsContainer.classList.remove('hidden');
+        bookings.classList.add('hidden');
+        discover.classList.add('hidden');
+        tutorials.classList.remove('hidden');
+        
+        listsContainer.classList.remove('lg:grid-cols-3');
+        listsContainer.classList.add('lg:grid-cols-1');
       } else if (sectionId === 'profile') {
         // Here you would redirect to profile or show a profile section. 
         // For now, we'll just alert as a placeholder.

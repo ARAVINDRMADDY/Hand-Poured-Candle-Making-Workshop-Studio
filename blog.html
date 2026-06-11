@@ -315,9 +315,15 @@
 
     <section class="py-16 bg-[#FAF8F5] dark:bg-[#2A2623] transition-colors duration-300 border-t border-gray-200 dark:border-gray-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <span class="text-accent font-semibold tracking-wider uppercase text-sm">Navigation</span>
-          <h2 class="text-3xl font-semibold text-brand-dark dark:text-brand-light mt-2">Explore by Category</h2>
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
+          <div>
+            <span class="text-accent font-semibold tracking-wider uppercase text-sm">Navigation</span>
+            <h2 class="text-3xl font-semibold text-brand-dark dark:text-brand-light mt-2">Explore by Category</h2>
+            <p class="text-brand-muted dark:text-gray-400 mt-4 font-medium">Discover our curated guides tailored for every stage of your candle-making journey.</p>
+          </div>
+          <div class="relative rounded-3xl overflow-hidden shadow-xl h-[200px]">
+            <img src="image/studio_containers.png" alt="Studio Setup" class="w-full h-full object-cover">
+          </div>
         </div>
         
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -352,6 +358,61 @@
             <h3 class="font-bold text-brand-dark dark:text-brand-light mb-1">Business Tips</h3>
             <p class="text-xs text-brand-muted dark:text-gray-400">Selling your creations</p>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white dark:bg-[#35302D] transition-colors duration-300 border-t border-gray-200 dark:border-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span class="text-accent font-semibold tracking-wider uppercase text-sm">Visual Guides</span>
+          <h2 class="text-3xl font-semibold text-brand-dark dark:text-brand-light mt-2">Video Tutorials</h2>
+          <p class="text-brand-muted dark:text-gray-400 mt-4 max-w-2xl mx-auto">Watch our master chandlers demonstrate techniques step-by-step.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="group cursor-pointer">
+            <div class="relative rounded-2xl overflow-hidden aspect-video bg-gray-200 dark:bg-gray-800 mb-4">
+              <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Video thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
+                <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/50 group-hover:scale-110 transition-transform">
+                  <i class="fas fa-play text-white text-xl ms-1"></i>
+                </div>
+              </div>
+            </div>
+            <h3 class="text-lg font-semibold text-brand-dark dark:text-brand-light group-hover:text-accent transition-colors">Wick Preparation & Centering</h3>
+            <p class="text-sm text-brand-muted dark:text-gray-400 mt-1">5:30 • Beginner</p>
+          </div>
+          
+          <div class="group cursor-pointer">
+            <div class="relative rounded-2xl overflow-hidden aspect-video bg-gray-200 dark:bg-gray-800 mb-4">
+              <img src="image/Mastering the Perfect Pour Temperature.avif" alt="Video thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
+                <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/50 group-hover:scale-110 transition-transform">
+                  <i class="fas fa-play text-white text-xl ms-1"></i>
+                </div>
+              </div>
+            </div>
+            <h3 class="text-lg font-semibold text-brand-dark dark:text-brand-light group-hover:text-accent transition-colors">Achieving Smooth Wax Tops</h3>
+            <p class="text-sm text-brand-muted dark:text-gray-400 mt-1">8:45 • Intermediate</p>
+          </div>
+          
+          <div class="group cursor-pointer">
+            <div class="relative rounded-2xl overflow-hidden aspect-video bg-gray-200 dark:bg-gray-800 mb-4">
+              <img src="image/Safely Embedding Botanicals.avif" alt="Video thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
+                <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/50 group-hover:scale-110 transition-transform">
+                  <i class="fas fa-play text-white text-xl ms-1"></i>
+                </div>
+              </div>
+            </div>
+            <h3 class="text-lg font-semibold text-brand-dark dark:text-brand-light group-hover:text-accent transition-colors">Botanical Embedding Safety</h3>
+            <p class="text-sm text-brand-muted dark:text-gray-400 mt-1">12:20 • Advanced</p>
+          </div>
+        </div>
+        
+        <div class="text-center mt-10">
+          <button class="bg-transparent border border-gray-300 dark:border-gray-700 text-brand-dark dark:text-brand-light px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:border-accent hover:text-accent transition-colors">View All Videos</button>
         </div>
       </div>
     </section>

@@ -256,7 +256,7 @@
 
           <div class="relative animate-fade-in lg:ps-10">
              <div class="relative overflow-hidden shadow-2xl h-[400px] lg:h-[500px] w-full group rounded-tl-[80px] rounded-br-[80px]">
-               <img src="image/Botanical Alchemy.avif" alt="Hand Poured Candles" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+               <img src="image/hero_candle_pouring.png" alt="Candle Pouring Workshop" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent"></div>
                <div class="absolute bottom-0 start-0 w-full h-1 bg-gradient-to-r from-accent to-transparent"></div>
              </div>
@@ -272,7 +272,7 @@
           
           <div class="relative">
             <div class="relative z-10 rounded-tr-[60px] rounded-bl-[60px] overflow-hidden shadow-xl">
-              <img src="image/Where Fragrance Meets.avif" alt="Where Fragrance Meets" class="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700">
+              <img src="image/workshop_pouring_wax.png" alt="Person pouring wax in workshop" class="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700">
             </div>
             <div class="absolute -bottom-8 -right-8 w-64 h-64 bg-accent/20 dark:bg-accent/10 rounded-full blur-2xl -z-10"></div>
             <div class="absolute -top-8 -left-8 w-48 h-48 border border-accent/30 dark:border-accent/20 rounded-tr-[50px] rounded-bl-[50px] -z-10"></div>
@@ -338,7 +338,7 @@
               <p class="text-sm text-brand-muted dark:text-gray-400 line-clamp-2">Our classic introductory class. Learn the basics of wax melting, temperature control, and vessel preparation.</p>
               <div class="pt-4 border-t border-gray-100 dark:border-white/5 flex justify-between items-center mt-2">
                 <span class="text-lg font-bold text-brand-dark dark:text-brand-light">$45</span>
-                <a href="services.html" class="text-xs font-bold uppercase tracking-widest text-accent hover:text-brand-dark dark:hover:text-white transition-colors">Book Now <i class="fas fa-arrow-right ms-1 text-[10px]"></i></a>
+                <button onclick="openEnrolmentModal('The Signature Pour', '$45')" class="text-xs font-bold uppercase tracking-widest text-accent hover:text-brand-dark dark:hover:text-white transition-colors">Book Now <i class="fas fa-arrow-right ms-1 text-[10px]"></i></button>
               </div>
             </div>
           </div>
@@ -356,7 +356,7 @@
               <p class="text-sm text-brand-muted dark:text-gray-400 line-clamp-2">Dive deep into fragrance wheel theory. Blend your own custom scent using premium essential and fragrance oils.</p>
               <div class="pt-4 border-t border-gray-100 dark:border-white/5 flex justify-between items-center mt-2">
                 <span class="text-lg font-bold text-brand-dark dark:text-brand-light">$65</span>
-                <a href="services.html" class="text-xs font-bold uppercase tracking-widest text-accent hover:text-brand-dark dark:hover:text-white transition-colors">Book Now <i class="fas fa-arrow-right ms-1 text-[10px]"></i></a>
+                <button onclick="openEnrolmentModal('Botanical Alchemy', '$65')" class="text-xs font-bold uppercase tracking-widest text-accent hover:text-brand-dark dark:hover:text-white transition-colors">Book Now <i class="fas fa-arrow-right ms-1 text-[10px]"></i></button>
               </div>
             </div>
           </div>
@@ -375,7 +375,7 @@
               <p class="text-sm text-brand-muted dark:text-gray-400 line-clamp-2">Bring a partner, enjoy complimentary wine, and craft matching candles in an intimate, relaxing atmosphere.</p>
               <div class="pt-4 border-t border-gray-100 dark:border-white/5 flex justify-between items-center mt-2">
                 <span class="text-lg font-bold text-brand-dark dark:text-brand-light">$110 <span class="text-xs text-brand-muted font-normal">/ pair</span></span>
-                <a href="services.html" class="text-xs font-bold uppercase tracking-widest text-accent hover:text-brand-dark dark:hover:text-white transition-colors">Book Now <i class="fas fa-arrow-right ms-1 text-[10px]"></i></a>
+                <button onclick="openEnrolmentModal('Sip & Pour Date Night', '$110')" class="text-xs font-bold uppercase tracking-widest text-accent hover:text-brand-dark dark:hover:text-white transition-colors">Book Now <i class="fas fa-arrow-right ms-1 text-[10px]"></i></button>
               </div>
             </div>
           </div>
@@ -395,16 +395,20 @@
       
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div class="flex flex-col items-center text-center mx-auto mb-16 gap-4 max-w-2xl">
-          <div class="w-full">
-            <div class="inline-flex items-center justify-center mb-4">
-              <span class="w-8 h-[1px] bg-accent me-3"></span>
-              <span class="text-xs uppercase tracking-[0.2em] font-medium text-accent">The Methodology</span>
-              <span class="w-8 h-[1px] bg-accent ms-3"></span>
-            </div>
-            <h2 class="text-4xl font-semibold text-brand-dark dark:text-brand-light mb-4">How The Magic Happens</h2>
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div class="relative rounded-3xl overflow-hidden shadow-xl h-[300px] lg:h-[400px]">
+            <img src="image/studio_containers.png" alt="Studio Containers" class="w-full h-full object-cover">
           </div>
-          <p class="text-brand-muted dark:text-gray-400 text-sm">A meticulous four-step journey ensures every candle poured at Lumina Studio burns cleanly, brightly, and beautifully.</p>
+          <div class="flex flex-col items-start text-start gap-4">
+            <div class="w-full">
+              <div class="inline-flex items-center justify-start mb-4">
+                <span class="w-8 h-[1px] bg-accent me-3"></span>
+                <span class="text-xs uppercase tracking-[0.2em] font-medium text-accent">The Methodology</span>
+              </div>
+              <h2 class="text-4xl font-semibold text-brand-dark dark:text-brand-light mb-4">How The Magic Happens</h2>
+            </div>
+            <p class="text-brand-muted dark:text-gray-400 text-sm max-w-md">A meticulous four-step journey ensures every candle poured at Lumina Studio burns cleanly, brightly, and beautifully. Our artisan vessels are ready for your creation.</p>
+          </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
@@ -679,6 +683,41 @@
     </div>
   </footer>
 
+  <!-- ENROLMENT MODAL -->
+  <div id="enrolment-modal" class="fixed inset-0 z-[100] hidden">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeEnrolmentModal()"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-white dark:bg-[#322D2A] rounded-3xl shadow-2xl overflow-hidden animate-fade-in">
+      <div class="relative h-32 bg-accent/20 dark:bg-accent/10 flex items-center justify-center">
+        <button onclick="closeEnrolmentModal()" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-white/50 dark:bg-black/20 rounded-full text-brand-dark dark:text-brand-light hover:bg-accent hover:text-white transition-colors">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-brand-dark dark:text-brand-light" id="modal-class-title">Class Name</h3>
+          <p class="text-accent font-bold mt-1" id="modal-class-price">$0.00</p>
+        </div>
+      </div>
+      <div class="p-8">
+        <form class="flex flex-col gap-4">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-widest text-brand-dark dark:text-brand-light mb-2">Select Date & Time</label>
+            <input type="datetime-local" class="w-full px-4 py-3 bg-gray-50 dark:bg-[#25211E] border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:border-accent text-brand-dark dark:text-brand-light">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-widest text-brand-dark dark:text-brand-light mb-2">Guest Details</label>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <input type="text" placeholder="First Name" class="w-full px-4 py-3 bg-gray-50 dark:bg-[#25211E] border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:border-accent text-brand-dark dark:text-brand-light">
+              <input type="text" placeholder="Last Name" class="w-full px-4 py-3 bg-gray-50 dark:bg-[#25211E] border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:border-accent text-brand-dark dark:text-brand-light">
+            </div>
+            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 bg-gray-50 dark:bg-[#25211E] border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:border-accent text-brand-dark dark:text-brand-light">
+          </div>
+          <button type="button" onclick="confirmEnrolment()" class="mt-4 w-full py-4 bg-brand-dark dark:bg-brand-light text-brand-light dark:text-brand-dark hover:bg-accent dark:hover:bg-accent font-semibold uppercase tracking-widest text-xs transition-all duration-300 rounded-xl flex items-center justify-center gap-2">
+            Confirm Booking <i class="fas fa-check"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <script>
     // Theme Toggle
     const themeToggle = document.getElementById('theme-toggle');
@@ -743,20 +782,77 @@
       const icon = document.getElementById(iconId);
       
       if(dropdown && menu && icon) {
+        window.addEventListener('resize', () => {
+          if (window.innerWidth >= 1280) {
+            mobileMenu.classList.add('hidden');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+          }
+        });
+
         dropdown.addEventListener('click', () => {
           menu.classList.toggle('hidden');
           if(menu.classList.contains('hidden')) {
             icon.classList.remove('fa-minus');
             icon.classList.add('fa-plus');
-            menu.classList.remove('flex'); // Add this for flex compatibility
+            menu.classList.remove('flex');
           } else {
             icon.classList.remove('fa-plus');
             icon.classList.add('fa-minus');
-            menu.classList.add('flex'); // Add this for flex compatibility
+            menu.classList.add('flex');
           }
         });
       }
     } 
+
+    // Quiz Logic
+    function showQuizResult(type) {
+      const options = document.querySelectorAll('.quiz-option');
+      options.forEach(opt => opt.style.display = 'none');
+      
+      const resultDiv = document.getElementById('quiz-result');
+      const title = document.getElementById('quiz-result-title');
+      const desc = document.getElementById('quiz-result-desc');
+      
+      if(type === 'woody') {
+        title.innerText = 'The Earthy Wanderer';
+        desc.innerText = 'You gravitate towards deep, grounding scents like Sandalwood, Cedar, and Vetiver. These fragrances bring the tranquility of nature indoors.';
+      } else if(type === 'fresh') {
+        title.innerText = 'The Ocean Breeze';
+        desc.innerText = 'You prefer clean, crisp, and revitalizing notes like Sea Salt, Bergamot, and Eucalyptus. Perfect for a refreshing atmosphere.';
+      } else if(type === 'floral') {
+        title.innerText = 'The Botanical Dreamer';
+        desc.innerText = 'Lush, romantic, and blooming scents are your favorite. Rose, Lavender, and Jasmine will fill your space with elegance.';
+      } else if(type === 'spicy') {
+        title.innerText = 'The Exotic Soul';
+        desc.innerText = 'Warm, intriguing, and rich notes like Amber, Cardamom, and Clove resonate with your vibrant personality.';
+      }
+      
+      resultDiv.classList.remove('hidden');
+    }
+    
+    function resetQuiz() {
+      const options = document.querySelectorAll('.quiz-option');
+      options.forEach(opt => opt.style.display = 'block');
+      document.getElementById('quiz-result').classList.add('hidden');
+    }
+
+    // Modal Logic
+    function openEnrolmentModal(title, price) {
+      document.getElementById('modal-class-title').innerText = title;
+      document.getElementById('modal-class-price').innerText = price;
+      document.getElementById('enrolment-modal').classList.remove('hidden');
+    }
+
+    function closeEnrolmentModal() {
+      document.getElementById('enrolment-modal').classList.add('hidden');
+    }
+
+    function confirmEnrolment() {
+      alert('Booking confirmed! Check your email for details.');
+      closeEnrolmentModal();
+    }
+
     // Initialize dropdowns
     setupMobileDropdown('mobile-home-dropdown', 'mobile-home-menu', 'mobile-home-icon');
     setupMobileDropdown('mobile-dashboard-dropdown', 'mobile-dashboard-menu', 'mobile-dashboard-icon');
